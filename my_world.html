@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Solar System</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.container {
+  width: 800px;
+  height: 800px;
+  position: relative;
+  perspective: 1000px;
+  animation: rotate 40s linear infinite;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #ffdb5b;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #ffdb5b;
+  z-index: 2;
+}
+
+.planet {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation-timing-function: linear;
+  transform-style: preserve-3d;
+}
+
+.mercury {
+  top: calc(50% - 30px);
+  left: calc(50% - 90px);
+  animation: orbit-mercury 4s linear infinite;
+  background-color: #d9d9d9;
+}
+
+.venus {
+  top: calc(50% - 60px);
+  left: calc(50% - 140px);
+  animation: orbit-venus 6s linear infinite;
+  background-color: #ffcd7f;
+}
+
+.earth {
+  top: calc(50% - 90px);
+  left: calc(50% - 190px);
+  animation: orbit-earth 8s linear infinite;
+  background-color: #45aaf2;
+}
+
+.mars {
+  top: calc(50% - 120px);
+  left: calc(50% - 240px);
+  animation: orbit-mars 10s linear infinite;
+  background-color: #ff6b6b;
+}
+
+.jupiter {
+  top: calc(50% - 160px);
+  left: calc(50% - 320px);
+  animation: orbit-jupiter 12s linear infinite;
+  background-color: #ffcf5c;
+}
+
+.saturn {
+  top: calc(50% - 200px);
+  left: calc(50% - 400px);
+  animation: orbit-saturn 16s linear infinite;
+  background-color: #ffc672;
+}
+
+.uranus {
+  top: calc(50% - 240px);
+  left: calc(50% - 480px);
+  animation: orbit-uranus 20s linear infinite;
+  background-color: #8fe1ff;
+}
+
+.neptune {
+  top: calc(50% - 280px);
+  left: calc(50% - 560px);
+  animation: orbit-neptune 24s linear infinite;
+  background-color: #6c9eff;
+}
+
+.ring-saturn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 2px;
+  background-color: #ffc672;
+  transform: translate(-50%, -50%) rotateX(60deg);
+  transform-style: preserve-3d;
+  animation: rotate 16s linear infinite;
+}
+
+.ring-saturn::before, .ring-saturn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffc672;
+}
+
+.ring-saturn::before {
+  border-radius: 50%;
+  transform: translateY(-100%) rotateX(90deg);
+}
+
+.ring-saturn::after {
+  border-radius: 50%;
+  transform: translateY(100%) rotateX(90deg);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-mercury {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-venus {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-earth {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-mars {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-jupiter {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-saturn {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-uranus {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+@keyframes orbit-neptune {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="sun"></div>
+  <div class="planet mercury"></div>
+  <div class="planet venus"></div>
+  <div class="planet earth"></div>
+  <div class="planet mars"></div>
+  <div class="planet jupiter"></div>
+  <div class="planet saturn">
+    <div class="ring-saturn"></div>
+  </div>
+  <div class="planet uranus"></div>
+  <div class="planet neptune"></div>
+</div>
+</body>
+</html>
